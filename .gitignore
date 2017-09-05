@@ -7,5 +7,4 @@
 *.pyc
 .vscode
 package-lock.json
-/node6
 /node6-test

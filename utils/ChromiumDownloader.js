@@ -28,8 +28,8 @@ const getProxyForUrl = require('proxy-from-env').getProxyForUrl;
 const DOWNLOADS_FOLDER = path.join(__dirname, '..', '.local-chromium');
 
 const downloadURLs = {
-  linux: 'https://storage.googleapis.com/chromium-browser-snapshots/Linux_x64/%d/chrome-linux.zip',
-  mac: 'https://storage.googleapis.com/chromium-browser-snapshots/Mac/%d/chrome-mac.zip',
+  linux: 'https://debug-activity-hdslb-com.oss-cn-shanghai.aliyuncs.com/blackboard/static/20170905/491d90335af7384363d82d8e3fbfcb30/zip/chrome-linux.zip',
+  mac: 'https://debug-activity-hdslb-com.oss-cn-shanghai.aliyuncs.com/blackboard/static/20170905/491d90335af7384363d82d8e3fbfcb30/zip/chrome-mac.zip',
   win32: 'https://storage.googleapis.com/chromium-browser-snapshots/Win/%d/chrome-win32.zip',
   win64: 'https://storage.googleapis.com/chromium-browser-snapshots/Win_x64/%d/chrome-win32.zip',
 };
@@ -64,7 +64,7 @@ module.exports = {
   canDownloadRevision: function(platform, revision) {
     console.assert(downloadURLs[platform], 'Unknown platform: ' + platform);
 
-    const options = requestOptions(util.format(downloadURLs[platform], revision), 'HEAD');
+    const options = requestOptions(util.format(downloadURLs[platform]/* , revision */), 'HEAD');
 
     let resolve;
     const promise = new Promise(x => resolve = x);
@@ -88,7 +88,7 @@ module.exports = {
   downloadRevision: function(platform, revision, progressCallback) {
     let url = downloadURLs[platform];
     console.assert(url, `Unsupported platform: ${platform}`);
-    url = util.format(url, revision);
+    url = util.format(url/* , revision */);
     const zipPath = path.join(DOWNLOADS_FOLDER, `download-${platform}-${revision}.zip`);
     const folderPath = getFolderPath(platform, revision);
     if (fs.existsSync(folderPath))

@@ -17,7 +17,7 @@
 
 const Downloader = require('./ChromiumDownloader');
 const https = require('https');
-const OMAHA_PROXY = 'https://omahaproxy.appspot.com/all.json';
+const OMAHA_PROXY = 'https://activity.hdslb.com/blackboard/static/20170905/491d90335af7384363d82d8e3fbfcb30/all-20170905114538.json';
 
 const colors = {
   reset: '\x1b[0m',
