@@ -1,9 +1,12 @@
 {
-  "name": "puppeteer",
+  "name": "@bilibili/puppeteer",
   "version": "0.10.2",
   "description": "A high-level API to control headless Chrome over the DevTools Protocol",
   "main": "index.js",
-  "repository": "github:GoogleChrome/puppeteer",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/googlechrome/puppeteer.git"
+  },
   "engines": {
     "node": ">=6.4.0"
   },
@@ -47,5 +50,14 @@
     "pixelmatch": "^4.0.2",
     "pngjs": "^3.2.0",
     "text-diff": "^1.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/googlechrome/puppeteer/issues"
+  },
+  "homepage": "https://github.com/googlechrome/puppeteer#readme",
+  "directories": {
+    "doc": "docs",
+    "example": "examples",
+    "test": "test"
   }
 }
