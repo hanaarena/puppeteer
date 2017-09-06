@@ -25,7 +25,7 @@ const removeRecursive = require('rimraf');
 const ProxyAgent = require('https-proxy-agent');
 const getProxyForUrl = require('proxy-from-env').getProxyForUrl;
 
-const DOWNLOADS_FOLDER = path.join(__dirname, '..', '.local-chromium');
+const DOWNLOADS_FOLDER = path.join(__dirname, '..', 'local-chromium');
 
 const downloadURLs = {
   linux: 'https://debug-activity-hdslb-com.oss-cn-shanghai.aliyuncs.com/blackboard/static/20170905/491d90335af7384363d82d8e3fbfcb30/zip/chrome-linux.zip',
